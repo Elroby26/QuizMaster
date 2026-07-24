@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A polished, responsive web development quiz app built with HTML, CSS, and vanilla JavaScript."
+    />
+    <title>Web Development Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Interactive Learning</p>
+          <h1>Web Development Quiz</h1>
+        </div>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </header>
+
+      <main class="quiz-layout">
+        <section id="quizCard" class="quiz-card" aria-live="polite">
+          <div class="card-head">
+            <span id="questionCounter" class="info-pill">Question 1 of 10</span>
+            <div class="timer-pill">
+              <span class="timer-label">Time</span>
+              <span id="timerBadge" class="timer-badge">15s</span>
+            </div>
+          </div>
+
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+
+          <div class="question-panel">
+            <p id="questionTopic" class="question-topic"></p>
+            <h2 id="questionText"></h2>
+            <div id="optionsContainer" class="options-grid"></div>
+          </div>
+
+          <div class="card-footer">
+            <p id="statusMessage" class="status-message" aria-live="polite">
+              Choose the best answer to continue.
+            </p>
+            <button id="nextBtn" class="primary-btn" type="button" disabled>
+              Next
+            </button>
+          </div>
+        </section>
+
+        <section id="resultCard" class="result-card hidden" aria-live="polite">
+          <div class="result-circle" id="resultCircle">
+            <div class="score-value" id="scoreValue">0/10</div>
+          </div>
+
+          <h2>Quiz Completed</h2>
+          <p id="resultPercentage" class="result-percentage">0%</p>
+          <p id="performanceMessage" class="performance-message">
+            Keep Practicing 📚
+          </p>
+
+          <div class="summary-grid">
+            <div>
+              <span class="summary-label">Correct</span>
+              <strong id="correctCount">0</strong>
+            </div>
+            <div>
+              <span class="summary-label">Wrong</span>
+              <strong id="wrongCount">0</strong>
+            </div>
+            <div>
+              <span class="summary-label">Best Score</span>
+              <strong id="bestScoreValue">0</strong>
+            </div>
+          </div>
+
+          <div id="reviewList" class="review-list"></div>
+
+          <div class="result-actions">
+            <button id="restartBtn" class="ghost-btn" type="button">
+              Restart Quiz
+            </button>
+          </div>
+
+          <p id="bestScoreLabel" class="best-score"></p>
+        </section>
+      </main>
+    </div>
+
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
